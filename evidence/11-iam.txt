@@ -1,0 +1,5 @@
+arn:aws:iam::XXXXXXXXXXXX:user/cc-p2-sihab
+
+Perintah: aws iam list-attached-user-policies --user-name cc-p2-sihab
+Hasil: AccessDenied (iam:ListAttachedUserPolicies tidak diizinkan untuk user ini)
+Interpretasi: user hanya punya AmazonEC2FullAccess (dipasang saat pembuatan user), tidak punya izin IAM. Ini least privilege yang bekerja.

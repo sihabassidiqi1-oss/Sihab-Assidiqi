@@ -1,0 +1,21 @@
+=== SEBELUM port 80 dibuka (curl dari laptop) ===
+curl -m 10 -I http://54.169.245.139/
+Hasil: curl: (28) Connection timed out after 10001 milliseconds
+
+=== SESUDAH port 80 dibuka (curl dari laptop) ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0  0    612   0      0   0      0      0      0                              0  0    612   0      0   0      0      0      0                              0  0    612   0      0   0      0      0      0                              0
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 13 Oct 2026 15:58:59 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Tue, 13 Oct 2026 15:52:04 GMT
+Connection: keep-alive
+ETag: "6ace53a4-264"
+Accept-Ranges: bytes
+
+
+=== SETELAH rule port 80 dicabut (curl dari laptop) ===
+curl: (28) Connection timed out after 10013 milliseconds

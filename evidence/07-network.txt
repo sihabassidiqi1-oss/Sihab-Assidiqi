@@ -1,0 +1,98 @@
+=== whoami / hostname ===
+ubuntu
+ip-10-20-1-76
+
+=== os-release ===
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+=== ip addr ===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 06:ff:c2:d2:72:95 brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    inet 10.20.1.76/24 metric 100 brd 10.20.1.255 scope global dynamic ens5
+       valid_lft 3320sec preferred_lft 3320sec
+    inet6 fe80::4ff:c2ff:fed2:7295/64 scope link 
+       valid_lft forever preferred_lft forever
+
+=== ip route ===
+default via 10.20.1.1 dev ens5 proto dhcp src 10.20.1.76 metric 100 
+10.20.0.2 via 10.20.1.1 dev ens5 proto dhcp src 10.20.1.76 metric 100 
+10.20.1.0/24 dev ens5 proto kernel scope link src 10.20.1.76 metric 100 
+10.20.1.1 dev ens5 proto dhcp scope link src 10.20.1.76 metric 100 
+
+=== listening ports ===
+Netid State  Recv-Q Send-Q   Local Address:Port Peer Address:PortProcess                                                                 
+udp   UNCONN 0      0            127.0.0.1:323       0.0.0.0:*    ino:4256 sk:1 cgroup:/system.slice/chrony.service <->                  
+udp   UNCONN 0      0        127.0.0.53%lo:53        0.0.0.0:*    uid:101 ino:2803 sk:2 cgroup:/system.slice/systemd-resolved.service <->
+udp   UNCONN 0      0      10.20.1.76%ens5:68        0.0.0.0:*    uid:100 ino:2775 sk:3 cgroup:/system.slice/systemd-networkd.service <->
+udp   UNCONN 0      0                [::1]:323          [::]:*    ino:4257 sk:4 cgroup:/system.slice/chrony.service v6only:1 <->         
+tcp   LISTEN 0      128            0.0.0.0:22        0.0.0.0:*    ino:5388 sk:5 cgroup:/system.slice/ssh.service <->                     
+tcp   LISTEN 0      4096     127.0.0.53%lo:53        0.0.0.0:*    uid:101 ino:2804 sk:6 cgroup:/system.slice/systemd-resolved.service <->
+tcp   LISTEN 0      128               [::]:22           [::]:*    ino:5390 sk:7 cgroup:/system.slice/ssh.service v6only:1 <->            
+
+=== disk ===
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        7.6G  1.9G  5.8G  24% /
+tmpfs            457M     0  457M   0% /dev/shm
+tmpfs            183M  856K  182M   1% /run
+tmpfs            5.0M     0  5.0M   0% /run/lock
+efivarfs         128K  3.1K  120K   3% /sys/firmware/efi/efivars
+/dev/nvme0n1p15  105M  6.1M   99M   6% /boot/efi
+tmpfs             92M  4.0K   92M   1% /run/user/1000
+
+=== memory ===
+               total        used        free      shared  buff/cache   available
+Mem:           914Mi       192Mi       186Mi       2.0Mi       535Mi       561Mi
+Swap:             0B          0B          0B
+
+=== uptime ===
+ 15:47:45 up 4 min,  1 user,  load average: 0.05, 0.08, 0.04
+
+=== akses internet keluar ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/2 200 
+date: Tue, 13 Oct 2026 15:47:46 GMT
+content-type: text/html; charset=UTF-8
+cache-control: public, max-age=2764800
+age: 14018
+cf-cache-status: HIT
+content-language: en
+content-security-policy: default-src 'self'; script-src 'self' *.nist.gov js-agent.newrelic.com bam.nr-data.net bam-cell.nr-data.net gov-bam.nr-data.net 'unsafe-inline' 'unsafe-eval' www.google-analytics.com *.googletagmanager.com platform.twitter.com https://player.vimeo.com static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' *.nist.gov fonts.googleapis.com  *.typekit.net; img-src 'self' 'unsafe-inline' data: *.nist.gov *.google-analytics.com *.googletagmanager.com cdnsecakmi.kaltura.com nist-el-nfrlhrr.s3.amazonaws.com https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/fullscreen@2x.png https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/fullscreen.png api.mapbox.com syndication.twitter.com https://h5p.org https://i.vimeocdn.com; media-src 'self' nist-el-nfrlhrr.s3.amazonaws.com; frame-src 'self' tube.nist.gov sts.nist.gov sts2.nist.gov *.kaltura.com *.youtube.com *.arcgis.com https://platform.twitter.com/ https://player.vimeo.com https://vimeo.com/ https://time.gov/ login.nist.gov https://customer-ltx6ylk10sje63q6.cloudflarestream.com https://challenges.cloudflare.com; frame-ancestors 'self'; child-src 'self' blob: tube.nist.gov sts.nist.gov sts2.nist.gov *.kaltura.com *.youtube.com *.arcgis.com *.time.gov login.nist.gov; font-src 'self' *.nist.gov fonts.googleapis.com fonts.gstatic.com *.typekit.net data:; connect-src 'self' bam.nr-data.net bam-cell.nr-data.net gov-bam.nr-data.net *.google-analytics.com *.analytics.google.com *.googletagmanager.com; upgrade-insecure-requests
+set-cookie: __cf_bm=IAOTIQ8hfW7B1ec32BTZR_74lKU1BpL2f.qxLD7QUAc-1791906466.5290334-1.0.1.1-itGuVKFVLyh1jIyK5NTPA0NKwQhs5NLuRflS8AkBmUNc3jt4A8MJxtlQ7MoeQyRE6D77iu6JM3UVgakyRxT7c1tEoKabe_ATdyVCahFtJEzeBjzBeocOqJa7.j.spAHu; HttpOnly; SameSite=None; Secure; Path=/; Domain=nist.gov; Expires=Tue, 13 Oct 2026 16:17:46 GMT
+expires: Sun, 19 Nov 1978 05:00:00 GMT
+last-modified: Tue, 13 Oct 2026 11:54:02 GMT
+server: cloudflare
+strict-transport-security: max-age=31536000
+vary: Cookie,Accept-Encoding
+via: varnish
+x-ah-environment: prod
+x-cache: MISS
+x-content-type-options: nosniff
+x-drupal-cache: HIT
+x-frame-options: SAMEORIGIN
+x-frame-options: SAMEORIGIN
+x-generator: Drupal 10 (https://www.drupal.org)
+x-request-id: v-c8ba27b2-c6fc-11f1-a872-035ecc7bb7ef
+x-ua-compatible: IE=edge
+x-xss-protection: 1;mode=block
+cf-ray: a49f7c17ca56dcfb-SEA
+

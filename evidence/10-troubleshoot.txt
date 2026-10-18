@@ -1,0 +1,15 @@
+# Troubleshooting: SSH timeout karena IP publik berubah
+## 1. Masalah: SSH ke VM tidak bisa (timeout) setelah pindah jaringan
+## 2. Evidence: ssh timeout
+ssh: connect to host 52.221.228.194 port 22: Connection timed out
+## 3. Hipotesis: rule SG port 22 tidak mengizinkan IP publik laptop yang baru
+## 4. Uji: bandingkan IP laptop dengan rule SG
+IP laptop sekarang: 103.173.163.193
+Rule SG port 22 saat ini:
+22	182.253.228.224/32
+Kesimpulan: IP laptop (103.173.163.193) tidak sama dengan rule (182.253.228.224/32). Hipotesis terbukti.
+## 5. Perbaikan: ganti rule SG port 22 ke IP laptop yang baru
+## 6. Verifikasi: SSH berhasil setelah rule diperbarui
+Warning: Permanently added '52.221.228.194' (ED25519) to the list of known hosts.
+ubuntu
+ip-10-20-1-76

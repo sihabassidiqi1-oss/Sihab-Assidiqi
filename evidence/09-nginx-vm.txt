@@ -1,0 +1,34 @@
+=== nginx status ===
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2026-10-13 15:52:05 UTC; 1min 58s ago
+       Docs: man:nginx(8)
+    Process: 2220 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 2221 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 2315 (nginx)
+      Tasks: 3 (limit: 1020)
+     Memory: 5.6M
+        CPU: 31ms
+     CGroup: /system.slice/nginx.service
+             ├─2315 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─2318 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+             └─2319 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+Oct 13 15:52:05 ip-10-20-1-76 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Oct 13 15:52:05 ip-10-20-1-76 systemd[1]: Started A high performance web server and a reverse proxy server.
+
+=== port 80 ===
+tcp   LISTEN 0      511            0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=2319,fd=6),("nginx",pid=2318,fd=6),("nginx",pid=2315,fd=6)) ino:10705 sk:1001 cgroup:/system.slice/nginx.service <->
+tcp   LISTEN 0      511               [::]:80           [::]:*    users:(("nginx",pid=2319,fd=7),("nginx",pid=2318,fd=7),("nginx",pid=2315,fd=7)) ino:10706 sk:1002 cgroup:/system.slice/nginx.service v6only:1 <->
+
+=== curl localhost ===
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 13 Oct 2026 15:54:04 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Tue, 13 Oct 2026 15:52:04 GMT
+Connection: keep-alive
+ETag: "6ace53a4-264"
+Accept-Ranges: bytes
+
